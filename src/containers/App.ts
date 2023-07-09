@@ -6,9 +6,24 @@ import Scroll from "../components/Scroll";
 
 import ErrorBoundary from "../components/ErrorBoundary";
 
-export default class App extends Component {
+export interface IRobot {
+  name: string;
+  id: number;
+  email: string;
+}
+
+interface IAppProps {
+
+}
+
+interface IAppState {
+  robots: Array<IRobot>;
+  searchField: string;
+}
+
+export default class App extends Component<IAppProps, IAppState> {
   constructor() {
-    super();
+    super(props));
 
     this.state = {
       robots: [],
